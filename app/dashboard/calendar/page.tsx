@@ -10,6 +10,8 @@ import { add } from "date-fns/add";
 import { isSameDay } from "date-fns/isSameDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { Locale } from "date-fns/locale";
+import { Calendar as CalendarIcon, Plus, X, List, Trash2, Edit3, Clock } from "lucide-react";
+import StarBorder from "@/components/StarBorder";
 
 export interface CalendarEvent {
 	id: string;
@@ -86,7 +88,6 @@ export default function CalendarView(): React.JSX.Element {
 	const [endTimeInput, setEndTimeInput] = useState<string>("10:00");
 	const [allDayInput, setAllDayInput] = useState(false);
 
-	// handle clicking/selecting a slot (day or time range)
 	function handleSelectSlot(slotInfo: SlotInfo) {
 		const { start, end } = slotInfo;
 		setSelectedDate(start);
@@ -98,13 +99,11 @@ export default function CalendarView(): React.JSX.Element {
 		setModalOpen(true);
 	}
 
-	// show events for the selected date
 	const eventsForSelectedDay = useMemo(() => {
 		if (!selectedDate) return [];
 		return events.filter((ev) => isSameDay(ev.start, selectedDate));
 	}, [events, selectedDate]);
 
-	// create event
 	function handleCreateEvent(e?: React.FormEvent) {
 		if (e) e.preventDefault();
 		if (!selectedDate) return;
@@ -134,12 +133,10 @@ export default function CalendarView(): React.JSX.Element {
 		setModalOpen(false);
 	}
 
-	// delete event
 	function handleDeleteEvent(id: string) {
 		setEvents((prev) => prev.filter((ev) => ev.id !== id));
 	}
 
-	// click an existing event -> open modal prefilled
 	function handleSelectEvent(event: RBCEvent) {
 		const ev = event as CalendarEvent;
 		setSelectedDate(ev.start);
@@ -151,14 +148,35 @@ export default function CalendarView(): React.JSX.Element {
 		setModalOpen(true);
 	}
 
+	const eventPropGetter = (event: RBCEvent) => {
+		return {
+			className: "calendar-event-primary",
+			style: {
+				backgroundColor: "rgba(var(--primary-rgb), 0.2)",
+				border: "1px solid rgba(var(--primary-rgb), 0.5)",
+				color: "white",
+				borderRadius: "8px",
+				fontSize: "12px",
+				fontWeight: "600",
+			}
+		};
+	};
+
 	return (
-		<div className="p-4">
-			<div className="flex items-center justify-between mb-4">
-				<h2 className="text-xl font-semibold">My Calendar</h2>
-				<div className="text-sm text-gray-500">Click a day or drag to select a time range</div>
+		<div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+			<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+				<div>
+					<h1 className="text-3xl font-black tracking-tight mb-2 uppercase">
+						Strategic <span className="text-primary italic">Timeline</span>
+					</h1>
+					<p className="text-muted-foreground font-medium">Map out your execution schedule and track every milestone.</p>
+				</div>
+				<div className="text-sm font-black text-muted-foreground uppercase tracking-widest flex items-center gap-2">
+					<Clock size={16} className="text-primary" /> Synchronized
+				</div>
 			</div>
 
-			<div className="h-[680px] bg-white rounded-lg shadow-sm overflow-hidden">
+			<div className="glass p-4 md:p-8 rounded-[2.5rem] border-white/5 shadow-2xl h-[700px]">
 				<RBCalendar
 					localizer={localizer}
 					events={events}
@@ -170,159 +188,144 @@ export default function CalendarView(): React.JSX.Element {
 					onSelectSlot={handleSelectSlot}
 					onSelectEvent={handleSelectEvent}
 					popup
+					eventPropGetter={eventPropGetter}
 					style={{ height: "100%" }}
 				/>
 			</div>
 
 			{/* Modal */}
 			{modalOpen && selectedDate && (
-				<div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center">
+				<div role="dialog" aria-modal="true" className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-in fade-in duration-300">
 					{/* backdrop */}
-					<div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setModalOpen(false)} />
+					<div className="absolute inset-0 bg-black/60 backdrop-blur-md" onClick={() => setModalOpen(false)} />
 
-					<div className="relative z-10 w-[min(900px,95%)] bg-white rounded-2xl shadow-2xl overflow-hidden">
-						<div className="flex items-start justify-between gap-4 p-6 border-b">
-							<div>
-								<h3 className="text-lg font-semibold">{format(selectedDate, "EEEE, MMMM do, yyyy")}</h3>
-								{selectedRange && (
-									<p className="text-sm text-gray-500 mt-1">
-										{format(selectedRange.start, "p")} — {format(selectedRange.end, "p")}
-									</p>
-								)}
-							</div>
-
-							<div className="flex items-center gap-2">
-								<button
+					<div className="relative z-10 w-full max-w-4xl glass rounded-[3rem] border-white/10 shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]">
+						{/* Left Pillar: Info & Events List */}
+						<div className="w-full md:w-1/2 p-8 border-r border-white/5 bg-white/5 overflow-y-auto">
+							<div className="flex justify-between items-start mb-8">
+								<div>
+									<h3 className="text-2xl font-black tracking-tight">{format(selectedDate, "MMMM do, yyyy")}</h3>
+									<p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">Timeline Audit</p>
+								</div>
+								<button 
 									onClick={() => setModalOpen(false)}
-									className="inline-flex items-center justify-center h-9 w-9 rounded-md text-gray-600 hover:bg-gray-100"
-									aria-label="Close"
+									className="p-2 rounded-full hover:bg-white/10 transition-colors md:hidden"
 								>
-									✕
+									<X size={20} />
 								</button>
 							</div>
-						</div>
 
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
-							{/* Left: events list */}
-							<div>
-								<h4 className="text-sm font-medium mb-3">Events on this day</h4>
+							<div className="space-y-6">
+								<h4 className="text-sm font-black text-muted-foreground uppercase tracking-wider flex items-center gap-2">
+									<List size={14} className="text-primary" /> Active Missions
+								</h4>
 
 								{eventsForSelectedDay.length === 0 ? (
-									<div className="rounded-md bg-gray-50 p-4 text-gray-500">No events scheduled for this day.</div>
+									<div className="p-8 rounded-3xl bg-black/20 border border-white/5 text-center italic text-muted-foreground font-medium">
+										No missions initialized for this slot.
+									</div>
 								) : (
-									<ul className="space-y-3">
+									<div className="space-y-4">
 										{eventsForSelectedDay
 											.slice()
 											.sort((a, b) => a.start.getTime() - b.start.getTime())
 											.map((ev) => (
-												<li key={ev.id} className="flex items-start justify-between gap-4 p-3 border rounded-lg">
+												<div key={ev.id} className="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between group">
 													<div>
-														<div className="font-semibold">{ev.title}</div>
-														<div className="text-sm text-gray-500">
-															{ev.allDay ? "All day" : `${format(ev.start, "p")} — ${format(ev.end, "p")}`}
+														<div className="font-bold text-base">{ev.title}</div>
+														<div className="text-xs text-muted-foreground font-bold mt-1">
+															{ev.allDay ? "FULL CYCLE" : `${format(ev.start, "HH:mm")} — ${format(ev.end, "HH:mm")}`}
 														</div>
 													</div>
 
-													<div className="flex items-center gap-2">
-														<button
-															onClick={() => {
-																// open modal prefilled (already done by selecting event, but keep quick focus)
-																setTitleInput(ev.title);
-																setStartTimeInput(format(ev.start, "HH:mm"));
-																setEndTimeInput(format(ev.end, "HH:mm"));
-																setAllDayInput(Boolean(ev.allDay));
-																setSelectedDate(ev.start);
-																setSelectedRange({ start: ev.start, end: ev.end });
-															}}
-															className="text-sm px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200"
-														>
-															Edit
-														</button>
-
+													<div className="flex items-center gap-2 scale-0 group-hover:scale-100 transition-all">
 														<button
 															onClick={() => handleDeleteEvent(ev.id)}
-															className="text-sm px-3 py-1 rounded-md bg-red-50 text-red-700 hover:bg-red-100"
+															className="p-2 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500 transition-all"
 														>
-															Delete
+															<Trash2 size={16} />
 														</button>
 													</div>
-												</li>
+												</div>
 											))}
-									</ul>
+									</div>
 								)}
 							</div>
+						</div>
 
-							{/* Right: form */}
-							<div>
-								<h4 className="text-sm font-medium mb-3">Create event</h4>
+						{/* Right Pillar: Control Form */}
+						<div className="w-full md:w-1/2 p-8 relative flex flex-col">
+							<button 
+								onClick={() => setModalOpen(false)}
+								className="absolute top-6 right-6 p-2 rounded-full hover:bg-white/10 transition-colors hidden md:flex"
+							>
+								<X size={20} />
+							</button>
 
-								<form onSubmit={handleCreateEvent} className="space-y-3">
-									<label className="block">
-										<span className="text-sm font-medium text-gray-700">Title</span>
-										<input
-											value={titleInput}
-											onChange={(e) => setTitleInput(e.target.value)}
-											placeholder="Event title"
-											className="mt-1 block w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-blue-200"
-										/>
-									</label>
+							<h4 className="text-sm font-black text-muted-foreground uppercase tracking-wider mb-8 flex items-center gap-2">
+								<Plus size={14} className="text-primary" /> Command Script
+							</h4>
 
-									<label className="flex items-center gap-2 text-sm">
-										<input
-											type="checkbox"
-											checked={allDayInput}
-											onChange={(e) => setAllDayInput(e.target.checked)}
-											className="h-4 w-4 rounded"
-										/>
-										All day
-									</label>
+							<form onSubmit={handleCreateEvent} className="space-y-6 flex-1">
+								<div className="space-y-2">
+									<label className="text-xs font-black text-muted-foreground uppercase tracking-widest pl-1">Mission Identifier</label>
+									<input
+										value={titleInput}
+										onChange={(e) => setTitleInput(e.target.value)}
+										placeholder="e.g., Tactical Refactoring"
+										className="w-full bg-black/40 border border-white/10 p-4 rounded-2xl focus:ring-2 focus:ring-primary focus:outline-none font-medium placeholder:text-muted-foreground/30"
+									/>
+								</div>
 
-									{!allDayInput && (
-										<div className="grid grid-cols-2 gap-2">
-											<label>
-												<span className="text-sm text-gray-600">Start</span>
-												<input
-													type="time"
-													value={startTimeInput}
-													onChange={(e) => setStartTimeInput(e.target.value)}
-													className="mt-1 block w-full rounded-md border-gray-200 shadow-sm"
-												/>
-											</label>
+								<div className="flex items-center gap-3 glass p-4 rounded-2xl border-white/5">
+									<input
+										type="checkbox"
+										id="all-day"
+										checked={allDayInput}
+										onChange={(e) => setAllDayInput(e.target.checked)}
+										className="w-5 h-5 rounded-md accent-primary"
+									/>
+									<label htmlFor="all-day" className="text-sm font-bold cursor-pointer">Continuous Cycle (All Day)</label>
+								</div>
 
-											<label>
-												<span className="text-sm text-gray-600">End</span>
-												<input
-													type="time"
-													value={endTimeInput}
-													onChange={(e) => setEndTimeInput(e.target.value)}
-													className="mt-1 block w-full rounded-md border-gray-200 shadow-sm"
-												/>
-											</label>
+								{!allDayInput && (
+									<div className="grid grid-cols-2 gap-4">
+										<div className="space-y-2">
+											<label className="text-xs font-black text-muted-foreground uppercase tracking-widest pl-1">Initiation</label>
+											<input
+												type="time"
+												value={startTimeInput}
+												onChange={(e) => setStartTimeInput(e.target.value)}
+												className="w-full bg-black/40 border border-white/10 p-4 rounded-2xl focus:ring-2 focus:ring-primary focus:outline-none font-bold"
+											/>
 										</div>
-									)}
 
-									<div className="flex items-center gap-3 pt-2">
-										<button
-											type="submit"
-											className="inline-flex items-center gap-2 rounded-md bg-blue-600 text-white px-4 py-2 text-sm hover:bg-blue-700"
-										>
-											Create
-										</button>
-
-										<button
-											type="button"
-											onClick={() => setModalOpen(false)}
-											className="inline-flex items-center gap-2 rounded-md bg-gray-100 text-gray-700 px-4 py-2 text-sm hover:bg-gray-200"
-										>
-											Cancel
-										</button>
+										<div className="space-y-2">
+											<label className="text-xs font-black text-muted-foreground uppercase tracking-widest pl-1">Termination</label>
+											<input
+												type="time"
+												value={endTimeInput}
+												onChange={(e) => setEndTimeInput(e.target.value)}
+												className="w-full bg-black/40 border border-white/10 p-4 rounded-2xl focus:ring-2 focus:ring-primary focus:outline-none font-bold"
+											/>
+										</div>
 									</div>
+								)}
 
-									<p className="text-xs text-gray-400 mt-2">
-										Note: events are stored in memory for this demo. Persist to localStorage or a backend as needed.
-									</p>
-								</form>
-							</div>
+								<div className="pt-4 mt-auto">
+									<StarBorder
+										color="var(--primary)"
+										speed="2s"
+										thickness={2}
+										className="w-full hover:scale-[1.02] shadow-xl"
+										onClick={handleCreateEvent}
+									>
+										<span className="flex items-center justify-center gap-3 font-black text-xl py-2 px-10 uppercase tracking-widest whitespace-nowrap">
+											Commit Mission <Edit3 size={20} />
+										</span>
+									</StarBorder>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

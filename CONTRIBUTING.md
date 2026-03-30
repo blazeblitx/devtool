@@ -1,6 +1,6 @@
 # 🤝 Contributing Guide
 
-Thank you for your interest in improving **The Dev Pocket**! Your help is valued — whether you contribute code, documentation, designs, or ideas. This guide explains how to get started, what we expect from contributors, and how to make your first PR successful.
+Thank you for your interest in improving **DoubleDown**! Your help is valued — whether you contribute code, documentation, designs, or ideas.
 
 ---
 
@@ -24,12 +24,12 @@ Click the **Fork** button in the top-right of the repository page.
 
 ```bash
 # HTTPS
-git clone https://github.com/<your-username>/The-Dev-Pocket.git
-cd The-Dev-Pocket
+git clone https://github.com/ <your-username>/DoubleDown.git
+cd DoubleDown
 
 # or SSH
-git clone git@github.com:<your-username>/The-Dev-Pocket.git
-cd The-Dev-Pocket
+git clone git@github.com:<your-username>/DoubleDown.git
+cd DoubleDown
 ```
 
 ![clone this repository](https://docs.github.com/assets/cb-13128/mw-1440/images/help/repository/code-button.webp)
@@ -184,4 +184,4 @@ If you prefer Docker or have a local database, include instructions in `README.m
 
 ---
 
-Thanks for contributing to **The Dev Pocket** — your work helps the whole community grow! 🚀
+Thanks for contributing to **DoubleDown** — your work helps the whole community grow! 🚀

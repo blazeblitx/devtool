@@ -1,12 +1,12 @@
-# 📚 The Dev Pocket
+# 📚 DoubleDown
 
-The Dev Pocket is an open-source project built to empower **learners, students, and developers** with curated resources, roadmaps, and interactive tools. Whether you're starting out or leveling up, this project will guide you through the journey of web development and beyond.
+DoubleDown is an open-source elite execution engine built to empower **ambitious developers** with high-fidelity resources, roadmaps, and peak performance tools. Whether you're starting out or doubling down on your career, this platform provides the strategy to bridge the gap between good and elite.
 
 ![Hacktoberfest Badge](https://img.shields.io/badge/Hacktoberfest-2025-blueviolet?style=for-the-badge&logo=hackaday)
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/Darshan3690/The-Dev-Pocket?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/Darshan3690/The-Dev-Pocket?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/Darshan3690/DoubleDown?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Darshan3690/DoubleDown?style=for-the-badge)
 
 ---
 
@@ -33,13 +33,13 @@ The Dev Pocket is an open-source project built to empower **learners, students, 
 
 ## 🚀 Getting Started (Developer Mode)
 
-Follow these steps to set up The Dev Pocket locally:
+Follow these steps to set up DoubleDown locally:
 
 ### 1. Fork & Clone Repo
 
 ```bash
-git clone https://github.com/Darshan3690/The-Dev-Pocket.git
-cd The-Dev-Pocket
+git clone https://github.com/Darshan3690/DoubleDown.git
+cd DoubleDown
 ```
 
 ### 2. Install Dependencies
@@ -124,7 +124,7 @@ We love contributions from everyone! 💖
 This project is part of **Hacktoberfest 2025**! 🌍✨
 
 * Submit 6 PRs to win official swag 🎉
-* Check the [issues](https://github.com/Darshan3690/The-Dev-Pocket/issues) tagged `hacktoberfest`, `good first issue`, or `help wanted`
+* Check the [issues](https://github.com/Darshan3690/DoubleDown/issues) tagged `hacktoberfest`, `good first issue`, or `help wanted`
 
 ---
 
@@ -132,13 +132,13 @@ This project is part of **Hacktoberfest 2025**! 🌍✨
 
 
 ### ⭐ Stargazers
-<a href="https://github.com/Darshan3690/The-Dev-Pocket/stargazers">
-  <img src="https://reporoster.com/stars/Darshan3690/The-Dev-Pocket" alt="Stargazers repo roster" />
+<a href="https://github.com/Darshan3690/DoubleDown/stargazers">
+  <img src="https://reporoster.com/stars/Darshan3690/DoubleDown" alt="Stargazers repo roster" />
 </a>
 
 ### 🍴 Forkers
-<a href="https://github.com/Darshan3690/The-Dev-Pocket/network/members">
-  <img src="https://reporoster.com/forks/Darshan3690/The-Dev-Pocket" alt="Forkers repo roster" />
+<a href="https://github.com/Darshan3690/DoubleDown/network/members">
+  <img src="https://reporoster.com/forks/Darshan3690/DoubleDown" alt="Forkers repo roster" />
 </a>
 
 

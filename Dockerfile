@@ -1,5 +1,5 @@
 # Multi-stage Dockerfile for Next.js (production)
-# App: The Dev Pocket
+# App: DoubleDown
 
 # 1) Base deps layer: install node_modules with cache
 FROM node:20-alpine AS deps

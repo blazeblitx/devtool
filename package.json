@@ -1,5 +1,5 @@
 {
-  "name": "the_dev_pocket",
+  "name": "doubledown",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,9 +10,12 @@
     "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.53",
     "@clerk/nextjs": "^6.32.0",
     "@prisma/client": "^6.16.2",
+    "ai": "^6.0.141",
     "date-fns": "^4.1.0",
+    "gsap": "^3.14.2",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.3",
     "lucide-react": "^0.544.0",

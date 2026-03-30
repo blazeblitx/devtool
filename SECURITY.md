@@ -2,7 +2,7 @@
 
 ## 📢 Reporting a Vulnerability
 
-If you discover a security vulnerability in **The Dev Pocket**, please help us by responsibly disclosing it. **Do not open a public GitHub issue**.
+If you discover a security vulnerability in **DoubleDown**, please help us by responsibly disclosing it. **Do not open a public GitHub issue**.
 
 Instead, report it privately to the maintainers:
 
@@ -35,4 +35,4 @@ We release security updates only for the **latest main branch**. Users should al
 
 ---
 
-Thank you for helping keep **The Dev Pocket** safe and secure! 🙏
+Thank you for helping keep **DoubleDown** safe and secure! 🙏
