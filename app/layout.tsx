@@ -3,6 +3,9 @@
 import React, { useEffect, useState } from "react";
 import "./globals.css";
 import Link from "next/link";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 import { ClerkProvider, UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { ThemeProvider } from "next-themes";
@@ -12,7 +15,6 @@ import {
   FaLinkedin, 
   FaInstagram, 
   FaDiscord,
-  FaEnvelope,
   FaArrowRight
 } from "react-icons/fa";
 import { Menu, X, Rocket } from "lucide-react";
@@ -37,13 +39,8 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-      </head>
-      <body className="antialiased selection:bg-primary/30 min-h-screen">
-        <ClerkProvider>
+      <body className={`${inter.className} antialiased selection:bg-primary/30 min-h-screen`}>
+        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || "pk_test_ZHVtbXkuY2xlcmsuYWNjb3VudHMuZGV2JA"}>
           <ThemeProvider 
             attribute="class" 
             defaultTheme="dark" 

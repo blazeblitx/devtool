@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
@@ -21,7 +21,7 @@ const FeatureCard = ({ icon, title, description, delay }: FeatureCardProps) => (
     style={{ animationDelay: delay }}
   >
     <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 glow-primary">
-      {React.isValidElement(icon) && React.cloneElement(icon as React.ReactElement<any>, { className: "w-7 h-7 text-primary" })}
+      {React.isValidElement(icon) && React.cloneElement(icon as React.ReactElement<{ className?: string }>, { className: "w-7 h-7 text-primary" })}
     </div>
     <h3 className="text-2xl font-bold mb-4 tracking-tight">{title}</h3>
     <p className="text-muted-foreground leading-relaxed text-lg">
@@ -63,13 +63,6 @@ const TestimonialCard = ({ quote, name, role, avatar }: TestimonialCardProps) =>
 const App = () => {
   const [isYearly, setIsYearly] = useState(false);
   const { isSignedIn } = useUser();
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">

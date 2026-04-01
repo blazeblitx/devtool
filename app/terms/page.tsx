@@ -19,7 +19,7 @@ export default function TermsPage() {
             TERMS OF <span className="text-primary italic">SERVICE</span>
           </h1>
           <p className="text-muted-foreground font-medium text-lg leading-relaxed">
-            These Terms of Service constitute a binding agreement between you ("User") and DoubleDown governing your use of our elite execution engine and services.
+            These Terms of Service constitute a binding agreement between you (&quot;User&quot;) and DoubleDown governing your use of our elite execution engine and services.
           </p>
         </header>
 
@@ -84,7 +84,7 @@ export default function TermsPage() {
               Disclaimers
             </h2>
             <div className="p-6 bg-primary/5 rounded-2xl border border-primary/20 font-mono text-sm">
-              THE PLATFORM IS PROVIDED "AS IS" WITHOUT WARRANTIES. DOUBLEDOWN MAKES NO GUARANTEES REGARDING SPECIFIC EDUCATIONAL OUTCOMES OR CAREER VELOCITY.
+              THE PLATFORM IS PROVIDED &quot;AS IS&quot; WITHOUT WARRANTIES. DOUBLEDOWN MAKES NO GUARANTEES REGARDING SPECIFIC EDUCATIONAL OUTCOMES OR CAREER VELOCITY.
             </div>
           </section>
 

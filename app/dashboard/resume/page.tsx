@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { FileText, Download, Plus, Trash2, Save, User as UserIcon, GraduationCap, Briefcase, Cpu, ArrowRight, Shield, Zap, X } from "lucide-react";
+import { FileText, Download, Plus, Trash2, Save, User as UserIcon, Cpu, Shield, X } from "lucide-react";
 
 interface PersonalInfo {
   fullName: string;
@@ -37,9 +36,7 @@ interface Skill {
   level: number; // 1-5
 }
 
-export default function ResumeBuilderPage() {
-  const router = useRouter();
-  
+export default function ResumeBuilderPage() {  
   // Personal Info State
   const [personalInfo, setPersonalInfo] = useState<PersonalInfo>({
     fullName: "",
@@ -200,8 +197,8 @@ export default function ResumeBuilderPage() {
                   <label className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.15em] pl-1">{input.label}</label>
                   <input
                     type="text"
-                    value={(personalInfo as any)[input.field]}
-                    onChange={(e) => handlePersonalInfoChange(input.field as any, e.target.value)}
+                    value={personalInfo[input.field as keyof PersonalInfo]}
+                    onChange={(e) => handlePersonalInfoChange(input.field as keyof PersonalInfo, e.target.value)}
                     className="w-full bg-black/40 border border-white/10 p-4 rounded-xl focus:ring-1 focus:ring-primary focus:outline-none font-bold text-sm placeholder:text-muted-foreground/20"
                     placeholder={input.placeholder}
                   />

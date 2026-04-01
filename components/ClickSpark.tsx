@@ -22,7 +22,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   children
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const sparksRef = useRef<any[]>([]);
+  const sparksRef = useRef<Array<{ x: number; y: number; angle: number; startTime: number }>>([]);
   const startTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     const parent = canvas.parentElement;
     if (!parent) return;
 
-    let resizeTimeout: any;
+    let resizeTimeout: NodeJS.Timeout;
 
     const resizeCanvas = () => {
       const { width, height } = parent.getBoundingClientRect();

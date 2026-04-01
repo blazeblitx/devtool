@@ -1,0 +1,109 @@
+﻿
+> doubledown@0.1.0 build
+> next build --turbopack
+
+node.exe :  ΓÜá 
+Warning: Next.js 
+inferred your workspace 
+root, but it may not be 
+correct.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo      
+        : NotSpecified: 
+( ΓÜ    á Warning: 
+N...not be     
+correct.:String) [], R  
+  emoteException
+    + 
+FullyQualifiedErrorI    
+d : NativeCommandError
+ 
+ We detected multiple 
+lockfiles and selected 
+the directory of C:\User
+s\gorth\package-lock.jso
+n as the root directory.
+ To silence this 
+warning, set 
+`turbopack.root` in 
+your Next.js config, or 
+consider removing one 
+of the lockfiles if 
+it's not needed.
+   See https://nextjs.or
+g/docs/app/api-reference
+/config/next-config-js/t
+urbopack#root-directory 
+for more information.
+ Detected additional 
+lockfiles: 
+   * C:\Users\gorth\OneD
+rive\Desktop\my-projects
+\devtool\The-Dev-Pocket\
+package-lock.json
+   * C:\Users\gorth\OneD
+rive\Desktop\my-projects
+\package-lock.json
+
+   Γû▓ Next.js 15.5.3 (Turbopack)
+
+   Creating an optimized production build ...
+ Γ£ô Finished writing to disk in 214ms
+ Γ£ô Compiled successfully in 5.7s
+   Linting and checking validity of types ...
+
+./app/checkout/pro/page.tsx
+3:17  Warning: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/dashboard/resume/page.tsx
+4:10  Warning: 'useRouter' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/page.tsx
+3:27  Warning: 'useEffect' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/21) ...
+Error occurred 
+prerendering page 
+"/dashboard/notes". 
+Read more: https://nextj
+s.org/docs/messages/prer
+ender-error
+Error: @clerk/nextjs: 
+Missing publishableKey. 
+You can get your key at 
+https://dashboard.clerk.
+com/last-active?path=api
+-keys.
+    at Object.throwMissi
+ngPublishableKeyError (C
+:\Users\gorth\OneDrive\D
+esktop\my-projects\devto
+ol\The-Dev-Pocket\.next\
+server\chunks\ssr\92dcd_
+@clerk_shared_dist_f575f
+a94._.js:5:1587)
+    at <unknown> (C:\Use
+rs\gorth\OneDrive\Deskto
+p\my-projects\devtool\Th
+e-Dev-Pocket\.next\serve
+r\chunks\ssr\92dcd_a9d6f
+141._.js:2:39547) {
+  digest: '2117385306'
+}
+Export encountered an 
+error on 
+/dashboard/notes/page: 
+/dashboard/notes, 
+exiting the build.
+ Γ¿» Next.js build 
+worker exited with 
+code: 1 and signal: null

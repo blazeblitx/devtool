@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link";
+// remove string
 import { Zap, Target, Award, CheckCircle2, Bot, Send, X, ArrowUpRight } from "lucide-react";
 import StarBorder from "@/components/StarBorder";
 

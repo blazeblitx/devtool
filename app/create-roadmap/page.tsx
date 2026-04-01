@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { 
-  Target, 
   Search, 
   Map as MapIcon, 
   Plus, 
@@ -23,7 +22,7 @@ import jsPDF from "jspdf";
 
 // Dynamically import ReactFlow to avoid SSR issues
 const ReactFlow = dynamic(() => import("reactflow"), { ssr: false });
-import { Background, Controls, MiniMap } from "reactflow";
+import { Background, Controls } from "reactflow";
 import "reactflow/dist/style.css";
 
 // Interface for Skill Data
@@ -148,7 +147,7 @@ export default function TacticalArchitect() {
         style: { stroke: '#a855f7', strokeWidth: 4, filter: 'drop-shadow(0 0 8px rgba(168, 85, 247, 0.5))' },
       };
     })
-    .filter((edge): edge is any => edge !== null);
+    .filter((edge): edge is NonNullable<typeof edge> => edge !== null);
 
   // PDF Download logic
   const downloadPDF = async () => {

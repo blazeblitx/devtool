@@ -1,0 +1,98 @@
+﻿
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\about\page.tsx
+   4:26  warning  'Shield' is defined but never used                               @typescript-eslint/no-unused-vars
+  31:75  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  31:80  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  31:86  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  31:92  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  32:27  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  32:44  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\checkout\pro\page.tsx
+   6:3   warning  'Zap' is defined but never used                                  @typescript-eslint/no-unused-vars
+  17:10  warning  'isCopied' is assigned a value but never used                    @typescript-eslint/no-unused-vars
+  17:20  warning  'setIsCopied' is assigned a value but never used                 @typescript-eslint/no-unused-vars
+  42:20  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\components\ui\Particle.tsx
+  235:6  warning  React Hook useEffect has a missing dependency: 'particleColors'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\create-roadmap\page.tsx
+    6:3   warning  'Target' is defined but never used        @typescript-eslint/no-unused-vars
+   26:32  warning  'MiniMap' is defined but never used       @typescript-eslint/no-unused-vars
+  151:29  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\dashboard\calendar\page.tsx
+   13:22  warning  'CalendarIcon' is defined but never used            @typescript-eslint/no-unused-vars
+   84:9   warning  'selectedRange' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  151:27  warning  'event' is defined but never used                   @typescript-eslint/no-unused-vars
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\dashboard\forum\page.tsx
+  12:3  warning  'Award' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\dashboard\layout.tsx
+  19:3  warning  'X' is defined but never used                      @typescript-eslint/no-unused-vars
+  23:3  warning  'ArrowRight' is defined but never used             @typescript-eslint/no-unused-vars
+  40:7  warning  'quickActions' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\dashboard\page.tsx
+  4:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\dashboard\quick-start\page.tsx
+   3:17  warning  'useState' is defined but never used      @typescript-eslint/no-unused-vars
+   8:3   warning  'Plus' is defined but never used          @typescript-eslint/no-unused-vars
+   9:3   warning  'Layers' is defined but never used        @typescript-eslint/no-unused-vars
+  11:3   warning  'Search' is defined but never used        @typescript-eslint/no-unused-vars
+  13:3   warning  'ChevronRight' is defined but never used  @typescript-eslint/no-unused-vars
+  15:3   warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+  16:3   warning  'Lock' is defined but never used          @typescript-eslint/no-unused-vars
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\dashboard\resume\page.tsx
+    5:68   warning  'GraduationCap' is defined but never used    @typescript-eslint/no-unused-vars
+    5:83   warning  'Briefcase' is defined but never used        @typescript-eslint/no-unused-vars
+    5:99   warning  'ArrowRight' is defined but never used       @typescript-eslint/no-unused-vars
+    5:119  warning  'Zap' is defined but never used              @typescript-eslint/no-unused-vars
+   41:9    warning  'router' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  203:45   error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+  204:78   error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\dashboard\study-buddy\page.tsx
+   8:3   warning  'Target' is defined but never used        @typescript-eslint/no-unused-vars
+   9:3   warning  'Cpu' is defined but never used           @typescript-eslint/no-unused-vars
+  11:3   warning  'Shield' is defined but never used        @typescript-eslint/no-unused-vars
+  12:3   warning  'Award' is defined but never used         @typescript-eslint/no-unused-vars
+  13:3   warning  'Plus' is defined but never used          @typescript-eslint/no-unused-vars
+  14:3   warning  'Search' is defined but never used        @typescript-eslint/no-unused-vars
+  15:3   warning  'Filter' is defined but never used        @typescript-eslint/no-unused-vars
+  17:3   warning  'ArrowUpRight' is defined but never used  @typescript-eslint/no-unused-vars
+  35:52  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  56:43  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  56:54  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\layout.tsx
+  15:3  warning  'FaEnvelope' is defined but never used                                                                                                                           @typescript-eslint/no-unused-vars
+  43:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\page.tsx
+   3:38  warning  'useRef' is defined but never used             @typescript-eslint/no-unused-vars
+  24:84  error    Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+  66:10  warning  'scrolled' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\app\terms\page.tsx
+  22:80  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  22:85  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  87:40  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  87:46  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\components\ClickSpark.tsx
+  25:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  35:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\components\FlowingMenu.tsx
+  3:39  warning  'useCallback' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\gorth\OneDrive\Desktop\my-projects\devtool\The-Dev-Pocket\components\StarBorder.tsx
+  11:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Γ£û 61 problems (21 errors, 40 warnings)
+

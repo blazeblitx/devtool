@@ -16,11 +16,7 @@ import {
   Search,
   Settings,
   Menu,
-  X,
-  UserPlus,
-  Zap,
-  MapPin,
-  ArrowRight
+  Zap
 } from "lucide-react"
 
 import { UserButton } from "@clerk/nextjs";
@@ -37,88 +33,6 @@ const sidebarLinks = [
 ]
 
 // Enhanced Quick Actions data with better organization make it more interactive and visually appealing
-const quickActions = [
-  {
-    id: "create-roadmap",
-    title: "Create Roadmap",
-    subtitle: "Plan your learning journey",
-    icon: MapPin,
-    href: "/create-roadmap", // it already exists
-    gradient: "from-blue-500 via-blue-600 to-indigo-600",
-    hoverGradient: "from-blue-600 via-blue-700 to-indigo-700",
-    category: "Planning"
-  },
-  {
-    id: "study-buddy",
-    title: "Study Buddy",
-    subtitle: "Find learning partners",
-    icon: UserPlus,
-    href: "/dashboard/study-buddy", // add the study buddy link here
-    gradient: "from-purple-500 via-purple-600 to-pink-600",
-    hoverGradient: "from-purple-600 via-purple-700 to-pink-700",
-    category: "Social"
-  },
-  {
-    id: "ai-recommender",
-    title: "TaskFlow Studio",
-    subtitle: "Launch agentic missions",
-    icon: Bot,
-    href: "/dashboard/projects", 
-    gradient: "from-emerald-500 via-teal-600 to-cyan-600",
-    hoverGradient: "from-emerald-600 via-teal-700 to-cyan-700",
-    category: "AI Engine"
-  },
-  {
-    id: "resume-builder",
-    title: "Resume Builder",
-    subtitle: "Create stunning resumes",
-    icon: FileText,
-    href: "/dashboard/resume", // add the resume link here
-    gradient: "from-orange-500 via-red-500 to-pink-500",
-    hoverGradient: "from-orange-600 via-red-600 to-pink-600",
-    category: "Career"
-  },
-  {
-    id: "quiz-center",
-    title: "Quiz Center",
-    subtitle: "Test your knowledge",
-    icon: Brain,
-    href: "/dashboard/quiz", // add the quiz link here
-    gradient: "from-violet-500 via-purple-500 to-indigo-500",
-    hoverGradient: "from-violet-600 via-purple-600 to-indigo-600",
-    category: "Learning"
-  },
-  {
-    id: "notes-todo",
-    title: "Notes / To-Do",
-    subtitle: "Organize your tasks",
-    icon: StickyNote,
-    href: "/dashboard/notes", //add the notes link here
-    gradient: "from-amber-500 via-orange-500 to-red-500",
-    hoverGradient: "from-amber-600 via-orange-600 to-red-600",
-    category: "Productivity"
-  },
-  {
-    id: "calendar",
-    title: "Calendar",
-    subtitle: "Schedule and manage events",
-    icon: Calendar,
-    href: "/dashboard/calendar", // add the calendar link here
-    gradient: "from-green-500 via-emerald-500 to-teal-500",
-    hoverGradient: "from-green-600 via-emerald-600 to-teal-600",
-    category: "Planning"
-  },
-  {
-    id: "quick-start",
-    title: "Quick Start",
-    subtitle: "Jump into any topic",
-    icon: Zap,
-    href: "/dashboard/quick-start",
-    gradient: "from-pink-500 via-rose-500 to-red-500",
-    hoverGradient: "from-pink-600 via-rose-600 to-red-600",
-    category: "Getting Started"
-  }
-]
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname()

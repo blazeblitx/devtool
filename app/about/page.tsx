@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Rocket, Target, Shield, Zap, ArrowRight, ShieldCheck, Globe, Users } from 'lucide-react';
+import { Rocket, Target, Zap, ArrowRight, ShieldCheck, Globe, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About | DoubleDown',
@@ -28,8 +28,8 @@ const AboutPage = () => {
             <span className="bg-gradient-to-r from-primary to-violet-400 bg-clip-text text-transparent">AMBITIOUS 1%.</span>
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground font-medium leading-relaxed max-w-3xl mx-auto">
-            DoubleDown started with a simple realization: the gap between "good" and "elite" 
-            developers isn't just talent—it's execution. We built the engine to bridge that gap.
+            DoubleDown started with a simple realization: the gap between &quot;good&quot; and &quot;elite&quot; 
+            developers isn&apos;t just talent—it&apos;s execution. We built the engine to bridge that gap.
           </p>
         </section>
 

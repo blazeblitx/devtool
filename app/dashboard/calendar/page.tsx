@@ -10,7 +10,7 @@ import { add } from "date-fns/add";
 import { isSameDay } from "date-fns/isSameDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { Locale } from "date-fns/locale";
-import { Calendar as CalendarIcon, Plus, X, List, Trash2, Edit3, Clock } from "lucide-react";
+import { Plus, X, List, Trash2, Edit3, Clock } from "lucide-react";
 import StarBorder from "@/components/StarBorder";
 
 export interface CalendarEvent {
@@ -81,7 +81,6 @@ export default function CalendarView(): React.JSX.Element {
 
 	const [modalOpen, setModalOpen] = useState(false);
 	const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-	const [selectedRange, setSelectedRange] = useState<{ start: Date; end: Date } | null>(null);
 
 	const [titleInput, setTitleInput] = useState("");
 	const [startTimeInput, setStartTimeInput] = useState<string>("09:00");
@@ -91,7 +90,6 @@ export default function CalendarView(): React.JSX.Element {
 	function handleSelectSlot(slotInfo: SlotInfo) {
 		const { start, end } = slotInfo;
 		setSelectedDate(start);
-		setSelectedRange({ start, end });
 		setStartTimeInput(format(start, "HH:mm"));
 		setEndTimeInput(format(end ?? add(start, { hours: 1 }), "HH:mm"));
 		setAllDayInput(false);
@@ -140,7 +138,6 @@ export default function CalendarView(): React.JSX.Element {
 	function handleSelectEvent(event: RBCEvent) {
 		const ev = event as CalendarEvent;
 		setSelectedDate(ev.start);
-		setSelectedRange({ start: ev.start, end: ev.end });
 		setTitleInput(ev.title);
 		setStartTimeInput(format(ev.start, "HH:mm"));
 		setEndTimeInput(format(ev.end, "HH:mm"));
@@ -148,7 +145,7 @@ export default function CalendarView(): React.JSX.Element {
 		setModalOpen(true);
 	}
 
-	const eventPropGetter = (event: RBCEvent) => {
+	const eventPropGetter = () => {
 		return {
 			className: "calendar-event-primary",
 			style: {

@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { 
   ShieldCheck, 
-  Zap, 
   CheckCircle2, 
   CreditCard, 
   Lock, 
@@ -14,8 +13,6 @@ import {
 import Link from "next/link";
 
 export default function CheckoutPage() {
-  const [isCopied, setIsCopied] = useState(false);
-
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-foreground p-6 md:p-12 lg:p-24 animate-in fade-in duration-700">
       <div className="fixed inset-0 bg-grid opacity-[0.02] pointer-events-none" />
@@ -39,7 +36,7 @@ export default function CheckoutPage() {
                 <span className="text-primary italic">ELITE EXECUTION.</span>
               </h1>
               <p className="text-xl text-muted-foreground font-medium leading-relaxed max-w-lg italic">
-                You're initializing the ARCHITECT protocol. This layer unlocks advanced AI alignment, 
+                You&apos;re initializing the ARCHITECT protocol. This layer unlocks advanced AI alignment, 
                 high-signal job matching, and automated brand synthesis.
               </p>
             </div>

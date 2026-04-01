@@ -1,19 +1,13 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import Link from "next/link"
 import { 
   Zap, 
   Target, 
-  Plus, 
-  Layers, 
   Cpu, 
-  Search, 
   ArrowRight, 
-  ChevronRight, 
   Bot, 
-  CheckCircle2,
-  Lock,
   MessageSquare
 } from "lucide-react"
 import StarBorder from "@/components/StarBorder";

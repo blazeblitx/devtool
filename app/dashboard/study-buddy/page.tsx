@@ -5,17 +5,9 @@ import dynamic from "next/dynamic";
 import { 
   Users, 
   Zap, 
-  Target, 
-  Cpu, 
   MessageSquare, 
-  Shield, 
-  Award, 
-  Plus, 
-  Search,
-  Filter,
-  X,
-  ArrowUpRight,
-  UserPlus
+  UserPlus,
+  X
 } from "lucide-react";
 
 // Dynamically import ReactFlow to avoid SSR issues
@@ -32,7 +24,7 @@ const syncMatches = [
 ];
 
 export default function NeuralLink() {
-  const [selectedNode, setSelectedNode] = useState<any>(null);
+  const [selectedNode, setSelectedNode] = useState<typeof syncMatches[0] | null>(null);
 
   // ReactFlow setup
   const nodes = [
@@ -53,10 +45,10 @@ export default function NeuralLink() {
     style: { stroke: m.sync > 90 ? '#a855f7' : m.sync > 80 ? '#3b82f6' : 'rgba(255,255,255,0.2)', strokeWidth: 2 }
   }));
 
-  const onNodeClick = useCallback((event: any, node: any) => {
+  const onNodeClick = useCallback((event: React.MouseEvent, node: { id: string }) => {
     if (node.id === 'user') return;
     const match = syncMatches.find(m => m.id === node.id);
-    setSelectedNode(match);
+    setSelectedNode(match || null);
   }, []);
 
   return (
